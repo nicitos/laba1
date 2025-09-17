@@ -84,7 +84,31 @@ public class Complex {
         im = imag;
         return this;
     }
+    /**
+     * Cube operation.
+     * @return this Complex object whose value is this^3
+     */
+    public Complex cube() {
+        Complex result = this.times(this).times(this);
+        this.re = result.re;
+        this.im = result.im;
+        return this;
+    }
+    /**
+     * Returns the real part of the complex number.
+     * @return real part
+     */
+    public double getReal() {
+        return re;
+    }
 
+    /**
+     * Returns the imaginary part of the complex number.
+     * @return imaginary part
+     */
+    public double getImag() {
+        return im;
+    }
     /**
      * Square of Complex object's length, we're using square of length to 
      * eliminate the computation of square root
