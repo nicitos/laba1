@@ -86,13 +86,12 @@ public class Complex {
     }
     /**
      * Cube operation.
-     * @return this Complex object whose value is this^3
+     * @return a new Complex object whose value is this^3
      */
     public Complex cube() {
-        Complex result = this.times(this).times(this);
-        this.re = result.re;
-        this.im = result.im;
-        return this;
+        Complex temp = new Complex(this.re, this.im); // Создаём копию this
+        Complex square = temp.times(temp); // z * z
+        return square.times(this); // (z * z) * z
     }
     /**
      * Returns the real part of the complex number.
